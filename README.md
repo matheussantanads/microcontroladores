@@ -4,3 +4,4 @@
 
 ## 🔨 Exemplos
 - [**`Blink`**](Blink/): Pisca um LED em intervalos de 0,5s.
+- [**`LCD`**](LCD/): Escrever mensagens no LCD.
