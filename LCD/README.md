@@ -32,6 +32,19 @@ Conectado na porta C, vamos exibir a mensagem "Olá Mundo!" centralizada na prim
 ## Explicando o código
 
 > Define os bits para o LCD.
+>
+> Pino RS do LCD está conectado na Porta C no bit RC5.
+>
+> Pino EN do LCD está conectado na Porta C no bit RC4.
+>
+> Pino D4 do LCD está conectado na Porta C no bit RC3.
+>
+> Pino D5 do LCD está conectado na Porta C no bit RC2.
+>
+> Pino D6 do LCD está conectado na Porta C no bit RC1.
+>
+> Pino D7 do LCD está conectado na Porta C no bit RC0.
+>
 >```c
 >sbit LCD_RS at RC5_bit;
 >sbit LCD_RS_Direction at TRISC5_bit;
