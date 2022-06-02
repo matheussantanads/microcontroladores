@@ -67,7 +67,7 @@ Conectado na porta C, vamos exibir a mensagem "Olá Mundo!" centralizada na prim
 >Lcd_Cmd(_LCD_CURSOR_OFF);
 >```
 
-> Exibe a mensagem 'Ola Mundo' na primeira linha a partir da coluna 4 até até a 12, caractere por caractere.
+> Exibe a mensagem 'Ola Mundo' na primeira linha a partir da coluna 4 até a 12, caractere por caractere.
 >```c
 >Lcd_Chr(1,4,'O');
 >Lcd_Chr(1,5,'L');
