@@ -43,52 +43,23 @@ Consultando o [datasheet do LM35](https://www.ti.com/lit/ds/symlink/lm35.pdf), j
 
 Sabendo disso, vamos analisar qual será a faixa que o LM35 irá nos entregar no sinal analógico
 
-$$\begin{array}{cc}
-
-\begin{array}{ccc}
-\text{Tensão (V)}&\text{Nível analógico}\\
-5&1023\\
--0,55&x
-\end{array}
-
-&
-
-\begin{array}{ccc}
-\text{Tensão (V)}&\text{Nível analógico}\\
-5&1023\\
-1,5&x
-\end{array}
-
-\\\\
-x = \dfrac{1023 \cdot -0,55}{5}= -112,53 & x = \dfrac{1023 \cdot 1,5}{5}=306,9 \approx 307
-
-\end{array}
-$$
+$$ \begin{array}{cc}\begin{array}{ccc}\text{Tensão (V)}&\text{Nível analógico}\\5&1023\\-0,55&x\end{array}&\begin{array}{ccc}\text{Tensão (V)}&\text{Nível analógico}\\5&1023\\1,5&x\end{array}\\\\ x = \dfrac{1023 \cdot -0,55}{5}= -112,53 & x = \dfrac{1023 \cdot 1,5}{5}=306,9 \approx 307 \end{array} $$
 
 O canal analógico não recebe sinais negativos então vamos receber somente 0 a 307, ou seja, apenas a faixa positiva da temperatura. [Mas e a medição de temperaturas abaixo de 0ºC?](#medindo-temperaturas-abaixo-de-0ºc).
 
 Para normalizar a tensão do LM35 em realção aos níveis analógicos faremos
-$$V_{\text{norm}}=S \cdot \dfrac{5}{1023}$$
+$$ V_{\text{norm}}=S \cdot \dfrac{5}{1023} $$
 Com $S$ sendo o valor analógico (0 até 307) enviado pelo LM35 ao PIC. Sabendo que o LM35 envia $0,01V$ para cada 1ºC teremos então
 
-$$
-\begin{array}{ccc}
-\text{Tensão (V)}&\text{Temperatura (ºC)}\\
-0,01&1\\
-V_{\text{norm}}&T
-\end{array}
-$$
+$$ \begin{array}{ccc}\text{Tensão (V)}&\text{Temperatura (ºC)}\\ 0,01&1\\ V_{\text{norm}}&T \end{array} $$
 
-$$
-T = \dfrac{V_{\text{norm}}}{0,01} = \dfrac{S \cdot \dfrac{5}{1023}}{0,01}=S \cdot \dfrac{\dfrac{5}{1023}}{0,01}
-$$
+$$ T = \dfrac{V_{\text{norm}}}{0,01} = \dfrac{S \cdot \dfrac{5}{1023}}{0,01}=S \cdot \dfrac{\dfrac{5}{1023}}{0,01} $$
+
 ### Vamos testar
 
 Qual será a temperatura se o LM35 estiver enviando um sinal $S=306,9$?
 
-$$
-T=306,9 \cdot \dfrac{\dfrac{5}{1023}}{0,01}=150ºC
-$$
+$$ T=306,9 \cdot \dfrac{\dfrac{5}{1023}}{0,01}=150ºC $$
 
 Perceba que essa equação só vale para $T \geq 0ºC$, uma vez que $S$ não pode ser negativo, ou seja, não recebemos um valor analógico negativo.
 
@@ -102,11 +73,7 @@ Perceba que essa equação só vale para $T \geq 0ºC$, uma vez que $S$ não pod
 
 Para isso uma alternativa é utilizar outro canal analógico para que possamos comparar e assim somar os sinais dos canais de forma que
 
-$$
-
-V_{\text{norm}}=(S_1 - S_2) \cdot \dfrac{\dfrac{5}{1023}}{0,01}
-
-$$
+$$ V_{\text{norm}}=(S_1 - S_2) \cdot \dfrac{\dfrac{5}{1023}}{0,01} $$
 
 Com $S_1$ sendo o sinal analógico referente ao $V_{out}$ do LM35 (o mesmo que utilizamos na equação somente para valores positivos) e $S_2$ sendo o sinal analógico referente ao pino GND do LM35 com diodos, pois nesse trecho do circuito teremos um DDP de 0,55V quando a temperatura está em -55ºC. Com isso ganhamos então a medição do lado negativo.
 
