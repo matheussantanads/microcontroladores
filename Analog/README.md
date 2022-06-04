@@ -123,7 +123,7 @@ Com $S_1$ sendo o sinal analógico referente ao $V_{out}$ do LM35 (o mesmo que u
 >>#define SBIT_ADON 0
 >>```
 >
->> Define a quantidad de bits do canal que iremos deslocar
+>> Define a quantidade de bits do canal que iremos deslocar
 >>
 >>```c
 >>#define SBIT_CHS0 2
