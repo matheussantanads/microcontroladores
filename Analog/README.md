@@ -218,9 +218,8 @@ Com $S_1$ sendo o sinal analógico referente ao $V_{out}$ do LM35 (o mesmo que u
 >>}
 >>```
 >
->>```c
 >> Coleta/Lê a informação do canal escolhido
->>
+>>```c
 >>unsigned int ADC_Read(unsigned char canal) {
 >>    ADCON0 = (1<<SBIT_ADON) | (canal<<SBIT_CHS0);
 >>    Delay_us(20);
