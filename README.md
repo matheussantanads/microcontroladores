@@ -5,3 +5,4 @@
 ## 🔨 Exemplos
 - [**`Blink`**](Blink/): Pisca um LED em intervalos de 0,5s.
 - [**`LCD`**](LCD/): Escrever mensagens no LCD.
+- [**`Analog`**](Analog/): Termômetro digital com LM35 com leituras de -55ºC até 150ºC.
