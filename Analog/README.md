@@ -44,28 +44,21 @@ Consultando o [datasheet do LM35](https://www.ti.com/lit/ds/symlink/lm35.pdf), j
 Sabendo disso, vamos analisar qual será a faixa que o LM35 irá nos entregar no sinal analógico
 
 
-$$
-\begin{array}{cc}
-
+$$\begin{array}{cc}
 \begin{array}{ccc}
 \text{Tensão (V)}&\text{Nível analógico}\\
 5&1023\\
 -0,55&x
 \end{array}
-
 &
-
 \begin{array}{ccc}
 \text{Tensão (V)}&\text{Nível analógico}\\
 5&1023\\
 1,5&x
 \end{array}
-
 \\\\
 x = \dfrac{1023 \cdot -0,55}{5}= -112,53 & x = \dfrac{1023 \cdot 1,5}{5}=306,9 \approx 307
-
-\end{array}
-$$
+\end{array}$$
 
 O canal analógico não recebe sinais negativos então vamos receber somente 0 a 307, ou seja, apenas a faixa positiva da temperatura. [Mas e a medição de temperaturas abaixo de 0ºC?](#medindo-temperaturas-abaixo-de-0ºc).
 
