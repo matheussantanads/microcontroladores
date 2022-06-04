@@ -162,7 +162,7 @@ Com $S_1$ sendo o sinal analógico referente ao $V_{out}$ do LM35 (o mesmo que u
 <br/>
 
 > Inicializa o módulo ADC.
-
+>
 >```c
 >ADC_Init();
 >```
