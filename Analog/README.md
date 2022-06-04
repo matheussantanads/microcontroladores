@@ -66,7 +66,11 @@ Para normalizar a tensão do LM35 em realção aos níveis analógicos faremos
 $$ V_{\text{norm}}=S \cdot \dfrac{5}{1023} $$
 Com $S$ sendo o valor analógico (0 até 307) enviado pelo LM35 ao PIC. Sabendo que o LM35 envia $0,01V$ para cada 1ºC teremos então
 
-$$ \begin{array}{ccc}\text{Tensão (V)}&\text{Temperatura (ºC)}\\ 0,01&1\\ V_{\text{norm}}&T \end{array} $$
+$$\begin{array}{ccc}
+\text{Tensão (V)}&\text{Temperatura (ºC)}\\
+0,01&1\\
+V_{\text{norm}}&T
+\end{array}$$
 
 $$ T = \dfrac{V_{\text{norm}}}{0,01} = \dfrac{S \cdot \dfrac{5}{1023}}{0,01}=S \cdot \dfrac{\dfrac{5}{1023}}{0,01} $$
 
